@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { event } from './../Event';
+import {GetDataService} from './get-data.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -19,6 +21,7 @@ export class AppComponent {
   country="";
   events:event[] = [];
 
+  constructor(private eventService:GetDataService,private router:Router){}
   
   onSubmit(form: NgForm) {
     
@@ -26,6 +29,7 @@ export class AppComponent {
     //this.router.navigate(['/login']);
     
     if (form.valid) {
+      
       
       const temp ={
         "name":form.value.name,
@@ -38,6 +42,11 @@ export class AppComponent {
 
       this.events.push(temp);
      // console.log(this.events)
+
+     this.eventService.addEvent(temp);
+
+     this.router.navigate(['event-list']);
+     
      
     }
     

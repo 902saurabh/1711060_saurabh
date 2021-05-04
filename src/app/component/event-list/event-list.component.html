@@ -1,0 +1,32 @@
+<div class="container">
+    
+<h2 class="text-center">Event Details</h2>
+<table class="table">
+  <thead>
+    <tr>
+     
+      <th scope="col">Event Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events;">
+      
+      <td>{{event.name}}</td>
+      <td>{{event.date}}</td>
+      <td>{{event.time}}</td>
+      <td>{{event.address}}</td>
+      <td>{{event.city}}</td>
+      <td>{{event.country}}</td>
+
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
