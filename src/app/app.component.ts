@@ -44,7 +44,14 @@ export class AppComponent {
   }
 
   clear(){
-    this.events = [];
+
+    this.name="";
+    this.date="";
+    this.time="";
+    this.address="";
+    this.city="";
+    this.country="";
+    
   }
 
 }
